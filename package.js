@@ -1,7 +1,8 @@
 Package.describe({
   summary: "Hashmap component",
-  version: "1.0.0",
-  git: "https://github.com/maxharris9/maxharris9-hashmap.git"
+  version: "1.0.1",
+  git: "https://github.com/max-leportlabs/maxharris9-hashmap.git",
+  documentation: null
 });
 
 Package.onUse(function(api) {
