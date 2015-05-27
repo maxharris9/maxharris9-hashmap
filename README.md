@@ -13,6 +13,38 @@ If you want to access an object via a single key, here's what to do:
 
     console.log(map.getItem('mh')); => { firstName: 'Max', lastName: 'Harris' }
 
+To get an array with all keys:
+
+    var map = new HashMap1d();
+    map.addItem('mh', { firstName: 'Max', lastName: 'Harris' } );
+    map.addItem('ca', { firstName: 'Chris', lastName: 'Alexander' } );
+    map.addItem('fs', { firstName: 'Faina', lastName: 'Shpund' } );
+    map.addItem('sk', { firstName: 'Sowmya', lastName: 'Karmali' } );
+    map.addItem('mb', { firstName: 'Matt', lastName: 'Bateman' } );
+
+    console.log(map.getKeys()); => ['mh','ca','fs','sk','mb']
+
+You can know if hash contains a key:
+
+    var map = new HashMap1d();
+    map.addItem('mh', { firstName: 'Max', lastName: 'Harris' } );
+    map.addItem('ca', { firstName: 'Chris', lastName: 'Alexander' } );
+    map.addItem('fs', { firstName: 'Faina', lastName: 'Shpund' } );
+    map.addItem('sk', { firstName: 'Sowmya', lastName: 'Karmali' } );
+    map.addItem('mb', { firstName: 'Matt', lastName: 'Bateman' } );
+
+    console.log(map.containsKey('mh')); => true
+    console.log(map.containsKey('mhhh')); => false 
+
+
+You can remove an object using the key, this function return deleted object:
+
+    var map = new HashMap1d();
+    map.addItem('foo', { firstName: 'First', lastName: 'Guy' } );
+    
+    console.log(map.removeItem('foo')); => { firstName: 'First', lastName: 'Guy' }
+    console.log(map.getItem('foo')); => undefined
+
 
 You can use anything you'd like for the key, including numbers:
 

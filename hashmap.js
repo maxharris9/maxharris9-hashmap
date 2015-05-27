@@ -9,8 +9,23 @@ HashMap1d.prototype.addItem = function(firstKey, value) {
   this._hash[firstKey] = value;
 };
 
+HashMap1d.prototype.removeItem = function(firstKey) {
+  var value = this.getItem(firstKey);
+  this._hash = _.omit(this._hash,firstKey);
+  return value;
+};
+
 HashMap1d.prototype.getItem = function(firstKey) {
   return this._hash[firstKey];
+};
+
+HashMap1d.prototype.getKeys = function() {
+  return _.keys(this._hash);
+};
+
+HashMap1d.prototype.containsKey = function(firstKey) {
+  var keys = _.keys(this._hash);
+  return keys.indexOf(firstKey) > -1;
 };
 
 HashMap1d.prototype.serialize = function () {
